@@ -34,6 +34,8 @@ public class MainActivity extends AppCompatActivity
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Log.i( getLocalClassName(),this.getClass().getSimpleName() + " onCreate");
+
 
         context =this;
 
@@ -57,31 +59,31 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onStart() {
         super.onStart();
-        Log.i( getLocalClassName(),this.getClass().getSimpleName());
+        Log.i( getLocalClassName(),this.getClass().getSimpleName() + "onStart");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Log.i( getLocalClassName(),this.getClass().getSimpleName());
+        Log.i( getLocalClassName(),this.getClass().getSimpleName() + "onResume");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Log.i( getLocalClassName(),this.getClass().getSimpleName());
+        Log.i( getLocalClassName(),this.getClass().getSimpleName() + "onPause");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Log.i( getLocalClassName(),this.getClass().getSimpleName());
+        Log.i( getLocalClassName(),this.getClass().getSimpleName() + "onStop");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.i( getLocalClassName(),this.getClass().getSimpleName());
+        Log.i( getLocalClassName(),this.getClass().getSimpleName() + "onDestroy");
     }
 
     @Override
@@ -103,6 +105,7 @@ public class MainActivity extends AppCompatActivity
             }
         }
     }
+
 
     @Override
     public void onBackPressed() {

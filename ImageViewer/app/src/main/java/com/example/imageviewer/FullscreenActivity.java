@@ -95,6 +95,7 @@ public class FullscreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_fullscreen);
+        Log.i( getLocalClassName(),this.getClass().getSimpleName() + " onCreate");
 
         mVisible = true;
         mControlsView = findViewById(R.id.fullscreen_content_controls);
@@ -137,31 +138,31 @@ public class FullscreenActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        Log.i( getLocalClassName(),this.getClass().getSimpleName());
+        Log.i( getLocalClassName(),this.getClass().getSimpleName() + "onStart");
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        Log.i( getLocalClassName(),this.getClass().getSimpleName());
+        Log.i( getLocalClassName(),this.getClass().getSimpleName() + "onResume");
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        Log.i( getLocalClassName(),this.getClass().getSimpleName());
+        Log.i( getLocalClassName(),this.getClass().getSimpleName() + "onPause");
     }
 
     @Override
     protected void onStop() {
         super.onStop();
-        Log.i( getLocalClassName(),this.getClass().getSimpleName());
+        Log.i( getLocalClassName(),this.getClass().getSimpleName() + "onStop");
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Log.i( getLocalClassName(),this.getClass().getSimpleName());
+        Log.i( getLocalClassName(),this.getClass().getSimpleName() + "onDestroy");
     }
 
     private void toggle() {
