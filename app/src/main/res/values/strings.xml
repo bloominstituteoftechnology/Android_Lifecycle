@@ -4,4 +4,7 @@
     <string name="title_activity_fullscreen">FullscreenActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="image_Name">image_name</string>
+    <string name="uri_Name">uri_Name</string>
+    <string name="description">description</string>
 </resources>
