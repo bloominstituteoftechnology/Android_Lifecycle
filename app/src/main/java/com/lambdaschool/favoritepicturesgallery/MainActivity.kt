@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Toast.makeText(this, "Lifecycle - onCreate", Toast.LENGTH_SHORT).show()
-        Log.i(javaClass.simpleName, "onCreate")
+        Log.i(javaClass.simpleName, "Lifecycle-onCreate")
         setContentView(R.layout.activity_main)
         val context = this
 
@@ -89,4 +89,39 @@ class MainActivity : AppCompatActivity() {
         internal const val REQUEST_IMAGE_GET = 1
         internal const val EDIT_IMAGE_REQUEST = 2
     }
+    override fun onRestart() {
+        Toast.makeText(this, "Lifecycle - onRestart", Toast.LENGTH_SHORT).show()
+        Log.i(javaClass.simpleName, "Lifecycle-onRestart")
+        super.onRestart()
+    }
+    override fun onDestroy() {
+        Toast.makeText(this, "Lifecycle - onDestroy", Toast.LENGTH_SHORT).show()
+        Log.i(javaClass.simpleName, "Lifecycle-onDestroy")
+        super.onDestroy()
+    }
+    override fun onStop() {
+        super.onStop()
+        Toast.makeText(this, "Lifecycle - onStop", Toast.LENGTH_SHORT).show()
+        Log.i(javaClass.simpleName, "Lifecycle-onStop")
+
+    }
+    override fun onPause() {
+        super.onPause()
+        Toast.makeText(this, "Lifecycle - onPause", Toast.LENGTH_SHORT).show()
+        Log.i(javaClass.simpleName, "Lifecycle-onPause")
+
+    }
+    override fun onResume() {
+        super.onResume()
+        Toast.makeText(this, "Lifecycle - onResume", Toast.LENGTH_SHORT).show()
+        Log.i(javaClass.simpleName, "Lifecycle-onResume")
+
+    }
+    override fun onStart() {
+        super.onStart()
+        Toast.makeText(this, "Lifecycle - onStart", Toast.LENGTH_SHORT).show()
+        Log.i(javaClass.simpleName, "Lifecycle-onStart")
+    }
+
+
 }

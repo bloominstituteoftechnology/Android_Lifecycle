@@ -22,7 +22,7 @@ class DetailsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
         Toast.makeText(this, "Lifecycle - onCreate", Toast.LENGTH_SHORT).show()
-        Log.i(javaClass.simpleName, "onCreate")
+        Log.i(javaClass.simpleName, "Lifecycle-onCreate")
 
         val intent = intent
         data = intent.getSerializableExtra("object") as ImageData
@@ -44,7 +44,7 @@ class DetailsActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         Toast.makeText(this, "Lifecycle - onStart", Toast.LENGTH_SHORT).show()
-        Log.i(javaClass.simpleName, "onStart")
+        Log.i(javaClass.simpleName, "Lifecycle-onStart")
 
         //AH- Setting and Showing up all the Image data to the screen
         image.setImageURI(data?.fileUri)
@@ -64,4 +64,37 @@ class DetailsActivity : AppCompatActivity() {
         setResult(Activity.RESULT_OK, resultIntent)
         finish()
     }
+
+    override fun onResume() {
+        super.onResume()
+        Toast.makeText(this, "Lifecycle - onResume", Toast.LENGTH_SHORT).show()
+        Log.i(javaClass.simpleName, "Lifecycle-onResume")
+
+    }
+    override fun onPause() {
+        super.onPause()
+        Toast.makeText(this, "Lifecycle - onPause", Toast.LENGTH_SHORT).show()
+        Log.i(javaClass.simpleName, "Lifecycle-onPause")
+
+    }
+    override fun onStop() {
+        super.onStop()
+        Toast.makeText(this, "Lifecycle - onStop", Toast.LENGTH_SHORT).show()
+        Log.i(javaClass.simpleName, "Lifecycle-onStop")
+
+    }
+    override fun onDestroy() {
+        Toast.makeText(this, "Lifecycle - onDestroy", Toast.LENGTH_SHORT).show()
+        Log.i(javaClass.simpleName, "Lifecycle-onDestroy")
+        super.onDestroy()
+    }
+    override fun onRestart() {
+        Toast.makeText(this, "Lifecycle - onRestart", Toast.LENGTH_SHORT).show()
+        Log.i(javaClass.simpleName, "Lifecycle-onRestart")
+        super.onRestart()
+    }
+
+
+
+
 }

@@ -58,7 +58,7 @@ class FullscreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Toast.makeText(this, "Lifecycle - onCreate", Toast.LENGTH_SHORT).show()
-        Log.i(javaClass.simpleName, "onCreate")
+        Log.i(javaClass.simpleName, "Lifecycle-onCreate")
 
         val stringArray = arrayOfNulls<String>(5)
 
@@ -151,4 +151,40 @@ class FullscreenActivity : AppCompatActivity() {
          */
         private val UI_ANIMATION_DELAY = 300
     }
+
+    override fun onStart() {
+        super.onStart()
+        Toast.makeText(this, "Lifecycle - onStart", Toast.LENGTH_SHORT).show()
+        Log.i(javaClass.simpleName, "Lifecycle-onStart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Toast.makeText(this, "Lifecycle - onResume", Toast.LENGTH_SHORT).show()
+        Log.i(javaClass.simpleName, "Lifecycle-onResume")
+
+    }
+    override fun onPause() {
+        super.onPause()
+        Toast.makeText(this, "Lifecycle - onPause", Toast.LENGTH_SHORT).show()
+        Log.i(javaClass.simpleName, "Lifecycle-onPause")
+
+    }
+    override fun onStop() {
+        super.onStop()
+        Toast.makeText(this, "Lifecycle - onStop", Toast.LENGTH_SHORT).show()
+        Log.i(javaClass.simpleName, "Lifecycle-onStop")
+
+    }
+    override fun onDestroy() {
+        Toast.makeText(this, "Lifecycle - onDestroy", Toast.LENGTH_SHORT).show()
+        Log.i(javaClass.simpleName, "Lifecycle-onDestroy")
+        super.onDestroy()
+    }
+    override fun onRestart() {
+        Toast.makeText(this, "Lifecycle - onRestart", Toast.LENGTH_SHORT).show()
+        Log.i(javaClass.simpleName, "Lifecycle-onRestart")
+        super.onRestart()
+    }
+
 }
