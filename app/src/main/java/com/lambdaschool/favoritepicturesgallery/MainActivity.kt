@@ -27,13 +27,13 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         Log.i("LifeCycle", "${javaClass.simpleName} onCreate")
-        //line 31 sets the view to the layout of activity_main.xml
+        //line 31 sets the view to the layout of activity_main.xml - VDT
         setContentView(R.layout.activity_main)
 
         val context = this
 
         imageList = ArrayList()
-        //sets on click listener to request image
+        //sets on click listener to request image - VDT
         button_add.setOnClickListener {
             val intent = Intent(Intent.ACTION_GET_CONTENT)
             intent.type = "image/*"
@@ -60,7 +60,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun refreshListView() {
         listAdapter!!.notifyDataSetChanged()
-    } //gets the newly chosen images?
+    } //gets the newly chosen images? -VDT
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         Log.i("LifeCycle", "${javaClass.simpleName} onActivityResult")
@@ -82,7 +82,7 @@ class MainActivity : AppCompatActivity() {
 
         }
         refreshListView()
-        //displays the image chosen along with list of other images
+        //displays the image chosen along with list of other images -VDT
     }
 
     companion object {

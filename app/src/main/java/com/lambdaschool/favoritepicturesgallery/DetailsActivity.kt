@@ -32,7 +32,7 @@ class DetailsActivity : AppCompatActivity() {
             val intent = Intent(context, FullscreenActivity::class.java)
             intent.putExtra("image", data?.fileUriString)
             startActivity(intent)
-        } //set on clck listener if pressed on image to display Fullscreen activity
+        } //set on clck listener if pressed on image to display Fullscreen activity -VDT
 
     }
 
