@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import android.widget.EditText
@@ -19,6 +20,8 @@ class DetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
+
+        println("${javaClass.simpleName} - onCreate")
 
         val intent = intent
         data = intent.getSerializableExtra("object") as ImageData
@@ -37,6 +40,8 @@ class DetailsActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
 
+        println("${javaClass.simpleName} - onStart")
+
         image.setImageURI(data?.fileUri)
         //        image.setImageDrawable(getResources().getDrawable(android.R.drawable.btn_star));
         text_name.text = data?.name
@@ -53,5 +58,31 @@ class DetailsActivity : AppCompatActivity() {
         resultIntent.putExtra("object", data)
         setResult(Activity.RESULT_OK, resultIntent)
         finish()
+    }
+
+
+    override fun onResume() {
+        super.onResume()
+        println("${javaClass.simpleName} - onResume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        println("${javaClass.simpleName} - onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        println("${javaClass.simpleName} - onStop")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        println("${javaClass.simpleName} - onDestroy")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        println("${javaClass.simpleName} - onRestart")
     }
 }

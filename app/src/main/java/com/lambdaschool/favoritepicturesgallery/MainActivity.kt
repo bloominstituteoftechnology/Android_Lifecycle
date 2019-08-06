@@ -27,10 +27,14 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        println("${javaClass.simpleName} - onCreate")
+
         val context = this
 
         imageList = ArrayList()
 
+        ///Lines 38-44 when the button is clicked it sets the intent to an image type then requests an image.///TB
         button_add.setOnClickListener {
             val intent = Intent(Intent.ACTION_GET_CONTENT)
             intent.type = "image/*"
@@ -58,7 +62,7 @@ class MainActivity : AppCompatActivity() {
     private fun refreshListView() {
         listAdapter!!.notifyDataSetChanged()
     }
-
+    ///Function adds image to a list and tells what position it is in.//TB
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == REQUEST_IMAGE_GET && resultCode == RESULT_OK) {
             val fullPhotoUri = data!!.data
@@ -85,5 +89,35 @@ class MainActivity : AppCompatActivity() {
 
         internal const val REQUEST_IMAGE_GET = 1
         internal const val EDIT_IMAGE_REQUEST = 2
+    }
+
+    override fun onStart() {
+        super.onStart()
+        println("${javaClass.simpleName} - onStart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        println("${javaClass.simpleName} - onResume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        println("${javaClass.simpleName} - onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        println("${javaClass.simpleName} - onStop")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        println("${javaClass.simpleName} - onDestroy")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        println("${javaClass.simpleName} - onRestart")
     }
 }
