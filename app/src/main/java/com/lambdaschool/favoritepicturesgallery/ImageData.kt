@@ -4,6 +4,7 @@ import android.net.Uri
 
 import java.io.Serializable
 
+//collects image information to display to screen JBG
 class ImageData(fullPhotoUri: Uri) : Serializable {
     var name: String? = null
     var description: String? = null
