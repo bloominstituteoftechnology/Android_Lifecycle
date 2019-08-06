@@ -8,7 +8,7 @@ Start with the provided starter project
 2. Override all Activity Lifecycle Methods in each of your Activities.
 3. For each of those, log when the Lifecycle Method is called.
 4. In the log, be sure to include the name of the activity and the name of the state being entered.
-> Use `this.getClass().getSimpleName()` to programatically get the name of the current activity being run
+> Use `javaClass.simpleName` to programatically get the name of the current activity being run
 
 ### Complete Exercises
 I know you aren't excited to be doing more worksheets, however, this module requires you to explore and play with the lifecycle to begin to understand it.
