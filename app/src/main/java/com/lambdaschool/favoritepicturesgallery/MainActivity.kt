@@ -14,6 +14,7 @@ import android.view.View
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 import java.util.ArrayList
@@ -26,6 +27,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Toast.makeText(this, "Lifecycle - onCreate", Toast.LENGTH_SHORT).show()
+        Log.i(javaClass.simpleName, "onCreate")
         setContentView(R.layout.activity_main)
         val context = this
 

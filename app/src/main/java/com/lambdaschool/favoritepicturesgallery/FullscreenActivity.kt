@@ -8,9 +8,11 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.widget.ImageView
+import android.widget.Toast
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -55,6 +57,8 @@ class FullscreenActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Toast.makeText(this, "Lifecycle - onCreate", Toast.LENGTH_SHORT).show()
+        Log.i(javaClass.simpleName, "onCreate")
 
         val stringArray = arrayOfNulls<String>(5)
 
@@ -79,6 +83,8 @@ class FullscreenActivity : AppCompatActivity() {
 
     override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)
+        Toast.makeText(this, "Lifecycle - onPostCreate", Toast.LENGTH_SHORT).show()
+        Log.i(javaClass.simpleName, "onPostCreate")
 
         // Trigger the initial hide() shortly after the activity has been
         // created, to briefly hint to the user that UI controls
