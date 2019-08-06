@@ -3,7 +3,7 @@ package com.lambdaschool.favoritepicturesgallery
 import android.net.Uri
 
 import java.io.Serializable
-
+//AH - Getting all the Image data in this class
 class ImageData(fullPhotoUri: Uri) : Serializable {
     var name: String? = null
     var description: String? = null
