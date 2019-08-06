@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -34,6 +35,7 @@ class ImageListAdapter// Provide a suitable constructor (depends on the kind of 
     // Create new views (invoked by the layout manager)
     override fun onCreateViewHolder(parent: ViewGroup,
                                     viewType: Int): ImageListAdapter.ViewHolder {
+        Log.i("LifeCycle", "${javaClass.simpleName} onCreateViewHolder")
         context = parent.context
 
         // create a new view
@@ -45,6 +47,7 @@ class ImageListAdapter// Provide a suitable constructor (depends on the kind of 
 
     // Replace the contents of a view (invoked by the layout manager)
     override fun onBindViewHolder(holder: ImageListAdapter.ViewHolder, position: Int) {
+        Log.i("LifeCycle", "${javaClass.simpleName} onBindViewHolder")
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         val data = imageList[position]
