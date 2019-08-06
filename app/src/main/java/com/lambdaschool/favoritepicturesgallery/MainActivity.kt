@@ -34,6 +34,7 @@ class MainActivity : AppCompatActivity() {
 
         imageList = ArrayList()
 
+        ///Lines 38-44 when the button is clicked it sets the intent to an image type then requests an image.///TB
         button_add.setOnClickListener {
             val intent = Intent(Intent.ACTION_GET_CONTENT)
             intent.type = "image/*"
@@ -61,7 +62,7 @@ class MainActivity : AppCompatActivity() {
     private fun refreshListView() {
         listAdapter!!.notifyDataSetChanged()
     }
-
+    ///Function adds image to a list and tells what position it is in.//TB
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == REQUEST_IMAGE_GET && resultCode == RESULT_OK) {
             val fullPhotoUri = data!!.data
