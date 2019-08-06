@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity() {
 
         imageList = ArrayList()
 
+        //makes image and it's details clickable to enter detail activity JBG
         button_add.setOnClickListener {
             val intent = Intent(Intent.ACTION_GET_CONTENT)
             intent.type = "image/*"
@@ -59,6 +60,7 @@ class MainActivity : AppCompatActivity() {
         listAdapter!!.notifyDataSetChanged()
     }
 
+    //if new image was pulled in with data will update image list JBG
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         if (requestCode == REQUEST_IMAGE_GET && resultCode == RESULT_OK) {
             val fullPhotoUri = data!!.data
@@ -85,5 +87,35 @@ class MainActivity : AppCompatActivity() {
 
         internal const val REQUEST_IMAGE_GET = 1
         internal const val EDIT_IMAGE_REQUEST = 2
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.i(javaClass.simpleName, "onStart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.i(javaClass.simpleName, "onResume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.i(javaClass.simpleName, "onPause")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.i(javaClass.simpleName, "onDestroy")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.i(javaClass.simpleName, "onStop")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.i(javaClass.simpleName, "onRestart")
     }
 }

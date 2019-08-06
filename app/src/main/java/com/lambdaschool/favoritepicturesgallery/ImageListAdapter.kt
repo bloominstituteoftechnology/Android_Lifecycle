@@ -17,6 +17,7 @@ import java.util.ArrayList
 /**
  * Not required for intent assignment
  */
+//helps make the layout for MainActivity with Images and details JBG
 class ImageListAdapter// Provide a suitable constructor (depends on the kind of dataset)
 (private val imageList: ArrayList<ImageData>, private val activity: Activity) : RecyclerView.Adapter<ImageListAdapter.ViewHolder>() {
     private var context: Context? = null

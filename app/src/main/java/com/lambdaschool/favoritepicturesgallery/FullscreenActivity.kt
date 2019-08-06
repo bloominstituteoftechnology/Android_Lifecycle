@@ -8,6 +8,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.widget.ImageView
@@ -46,6 +47,7 @@ class FullscreenActivity : AppCompatActivity() {
      * system UI. This is to prevent the jarring behavior of controls going away
      * while interacting with activity UI.
      */
+    // opens actionbar briefly when image clicked before hiding again JBG
     private val mDelayHideTouchListener = View.OnTouchListener { view, motionEvent ->
         if (AUTO_HIDE) {
             delayedHide(AUTO_HIDE_DELAY_MILLIS)
@@ -144,5 +146,35 @@ class FullscreenActivity : AppCompatActivity() {
          * and a change of the status and navigation bar.
          */
         private val UI_ANIMATION_DELAY = 300
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.i(javaClass.simpleName, "onStart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.i(javaClass.simpleName, "onResume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.i(javaClass.simpleName, "onPause")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.i(javaClass.simpleName, "onDestroy")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.i(javaClass.simpleName, "onStop")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.i(javaClass.simpleName, "onRestart")
     }
 }
