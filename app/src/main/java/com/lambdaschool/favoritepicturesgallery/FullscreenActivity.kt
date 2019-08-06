@@ -8,6 +8,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.widget.ImageView
@@ -55,6 +56,8 @@ class FullscreenActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        println("${javaClass.simpleName} - onCreate")
 
         val stringArray = arrayOfNulls<String>(5)
 
@@ -145,4 +148,37 @@ class FullscreenActivity : AppCompatActivity() {
          */
         private val UI_ANIMATION_DELAY = 300
     }
+
+
+    override fun onStart() {
+        super.onStart()
+        println("${javaClass.simpleName} - onStart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        println("${javaClass.simpleName} - onResume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        println("${javaClass.simpleName} - onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        println("${javaClass.simpleName} - onStop")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        println("${javaClass.simpleName} - onDestroy")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        println("${javaClass.simpleName} - onRestart")
+    }
 }
+
+
