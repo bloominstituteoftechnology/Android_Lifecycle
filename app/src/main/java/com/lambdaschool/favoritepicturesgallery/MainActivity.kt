@@ -10,6 +10,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.util.TypedValue
+import android.view.ActionMode
 import android.view.View
 import android.widget.Button
 import android.widget.LinearLayout
@@ -40,6 +41,7 @@ class MainActivity : AppCompatActivity() {
         }
         Log.i("Activity_State_Log_Data", imageList.toString())
 
+        Log.i("${javaClass.simpleName}", " onCreate")
 
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
@@ -53,6 +55,35 @@ class MainActivity : AppCompatActivity() {
         listAdapter = ImageListAdapter(imageList, this)
         layout_list.adapter = listAdapter
 
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.i("${javaClass.simpleName}", " onStart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.i("${javaClass.simpleName}", " onResume")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.i("${javaClass.simpleName}", " onRestart")
+    }
+    override fun onPause() {
+        super.onPause()
+        Log.i("${javaClass.simpleName}", " onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.i("${javaClass.simpleName}", " onStop")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.i("${javaClass.simpleName}", " onDestroy")
     }
 
     private fun refreshListView() {

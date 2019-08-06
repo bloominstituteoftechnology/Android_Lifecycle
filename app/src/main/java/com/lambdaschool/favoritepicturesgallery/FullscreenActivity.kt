@@ -8,6 +8,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.widget.ImageView
@@ -74,7 +75,37 @@ class FullscreenActivity : AppCompatActivity() {
         //        findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
 
         val intent = intent
+        Log.i("${javaClass.simpleName}", " onCreate")
         (mContentView as ImageView).setImageURI(Uri.parse(intent.getStringExtra("image")))
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.i("${javaClass.simpleName}", " onStart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.i("${javaClass.simpleName}", " onResume")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.i("${javaClass.simpleName}", " onRestart")
+    }
+    override fun onPause() {
+        super.onPause()
+        Log.i("${javaClass.simpleName}", " onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.i("${javaClass.simpleName}", " onStop")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.i("${javaClass.simpleName}", " onDestroy")
     }
 
     override fun onPostCreate(savedInstanceState: Bundle?) {

@@ -10,7 +10,7 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
-import com.lambdaschool.favoritepicturesgallery.ImageListAdapter.ViewHolder
+import DetailsActivity
 
 import java.util.ArrayList
 
