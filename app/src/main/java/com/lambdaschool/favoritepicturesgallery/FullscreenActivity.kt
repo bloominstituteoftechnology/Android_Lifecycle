@@ -8,9 +8,11 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.widget.ImageView
+import android.widget.Toast
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -55,6 +57,7 @@ class FullscreenActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        println("${javaClass.simpleName} - Lifecycle onCreate")
 
         val stringArray = arrayOfNulls<String>(5)
 
@@ -79,7 +82,6 @@ class FullscreenActivity : AppCompatActivity() {
 
     override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)
-
         // Trigger the initial hide() shortly after the activity has been
         // created, to briefly hint to the user that UI controls
         // are available.
@@ -144,5 +146,35 @@ class FullscreenActivity : AppCompatActivity() {
          * and a change of the status and navigation bar.
          */
         private val UI_ANIMATION_DELAY = 300
+    }
+
+    override fun onStart() {
+        super.onStart()
+        println("${javaClass.simpleName} - Lifecycle onStart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        println("${javaClass.simpleName} - Lifecycle onResume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        println("${javaClass.simpleName} - Lifecycle onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        println("${javaClass.simpleName} - Lifecycle onStop")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        println("${javaClass.simpleName} - Lifecycle onDestroy")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        println("${javaClass.simpleName} - Lifecycle onRestart")
     }
 }
