@@ -10,6 +10,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.util.TypedValue
+import android.view.ActionMode
 import android.view.View
 import android.widget.Button
 import android.widget.LinearLayout
@@ -28,6 +29,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val context = this
+        Log.i("Lifecycle","onCreate")
 
         imageList = ArrayList()
 
@@ -54,6 +56,40 @@ class MainActivity : AppCompatActivity() {
         layout_list.adapter = listAdapter
 
     }
+
+    override fun onStart() {
+        super.onStart()
+        Log.i("Lifecycle", "onStart")
+    }
+
+     override fun onResume() {
+          super.onResume()
+         Log.i("Lifecycle" , "onResume")
+
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.i("Lifecycle" , "onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.i("Lifecycle", "onStop")
+    }
+
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.i("Lifecycle" , "onRestart")
+    }
+
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.i("Lifecycle" , "onDestroy")
+    }
+
 
     private fun refreshListView() {
         listAdapter!!.notifyDataSetChanged()
