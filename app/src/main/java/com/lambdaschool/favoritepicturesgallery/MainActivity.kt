@@ -5,6 +5,7 @@ import android.content.Intent
 import android.graphics.Typeface
 import android.net.Uri
 import android.os.Bundle
+import android.os.PersistableBundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -39,6 +40,8 @@ class MainActivity : AppCompatActivity() {
             }
         }
         Log.i("Activity_State_Log_Data", imageList.toString())
+        Log.i("LifeCycle", "onCreate")
+
 
 
         // use this setting to improve performance if you know that changes
@@ -53,6 +56,11 @@ class MainActivity : AppCompatActivity() {
         listAdapter = ImageListAdapter(imageList, this)
         layout_list.adapter = listAdapter
 
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
+        super.onCreate(savedInstanceState, persistentState)
+        Log.i("LifeCycle", "onCreate")
     }
 
     private fun refreshListView() {
@@ -78,12 +86,18 @@ class MainActivity : AppCompatActivity() {
 
         }
         refreshListView()
+        Log.i("LifeCycle", "onActivityResult")
+
 
     }
+
+
 
     companion object {
 
         internal const val REQUEST_IMAGE_GET = 1
         internal const val EDIT_IMAGE_REQUEST = 2
     }
+
+
 }
