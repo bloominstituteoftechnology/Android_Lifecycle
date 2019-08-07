@@ -19,7 +19,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import java.util.ArrayList
 
 class MainActivity : AppCompatActivity() {
-
+// had to change something
     internal var imageList: ArrayList<ImageData> = ArrayList()
     private var layoutManager: LinearLayoutManager? = null
     private var listAdapter: ImageListAdapter? = null
