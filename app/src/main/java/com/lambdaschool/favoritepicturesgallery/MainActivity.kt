@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val context = this
-
+        Log.i("Lifecycle", "onCreate")
         imageList = ArrayList()
 
         button_add.setOnClickListener {
@@ -85,5 +85,14 @@ class MainActivity : AppCompatActivity() {
 
         internal const val REQUEST_IMAGE_GET = 1
         internal const val EDIT_IMAGE_REQUEST = 2
+    }
+    override fun onPause(){
+        super.onPause()
+        Log.i("Lifecycle", "onPause()")
+
+    }
+    override fun onDestroy(){
+        super.onDestroy()
+        Log.i("Lifecycle", "onDestroy")
     }
 }
