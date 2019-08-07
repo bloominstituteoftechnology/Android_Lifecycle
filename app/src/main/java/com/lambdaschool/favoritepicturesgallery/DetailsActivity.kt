@@ -5,6 +5,7 @@ import android.content.Context
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.view.WindowManager
 import android.widget.EditText
@@ -19,6 +20,8 @@ class DetailsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_details)
+        Log.i("Lifecycle", "onCreate")
+
 
         val intent = intent
         data = intent.getSerializableExtra("object") as ImageData
@@ -36,6 +39,7 @@ class DetailsActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
+        Log.i("Lifecycle","onStart")
 
         image.setImageURI(data?.fileUri)
         //        image.setImageDrawable(getResources().getDrawable(android.R.drawable.btn_star));
@@ -54,4 +58,31 @@ class DetailsActivity : AppCompatActivity() {
         setResult(Activity.RESULT_OK, resultIntent)
         finish()
     }
+
+    override fun onPause() {
+        super.onPause()
+        Log.i("Lifecycle" , "onPause")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.i("lifecycle","onResume")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.i("Lifecycle","onRestart")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.i("Lifecycle","onDestroy")
+    }
+
 }
+
+
+
+
+
+
