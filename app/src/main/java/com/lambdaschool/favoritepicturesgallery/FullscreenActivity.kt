@@ -8,6 +8,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.widget.ImageView
@@ -55,6 +56,8 @@ class FullscreenActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.i("Lifecycle", "onCreate")
+
 
         val stringArray = arrayOfNulls<String>(5)
 
@@ -75,6 +78,7 @@ class FullscreenActivity : AppCompatActivity() {
 
         val intent = intent
         (mContentView as ImageView).setImageURI(Uri.parse(intent.getStringExtra("image")))
+
     }
 
     override fun onPostCreate(savedInstanceState: Bundle?) {
@@ -84,6 +88,8 @@ class FullscreenActivity : AppCompatActivity() {
         // created, to briefly hint to the user that UI controls
         // are available.
         delayedHide(100)
+        Log.i("Lifecycle", "onPostCreate")
+
     }
 
     private fun toggle() {
