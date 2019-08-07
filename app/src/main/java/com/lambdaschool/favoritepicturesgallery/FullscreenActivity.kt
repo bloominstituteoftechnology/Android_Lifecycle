@@ -8,6 +8,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.widget.ImageView
@@ -59,6 +60,7 @@ class FullscreenActivity : AppCompatActivity() {
         val stringArray = arrayOfNulls<String>(5)
 
         setContentView(R.layout.activity_fullscreen)
+        Log.i("Lifecycle", "OnCreate")
 
         mVisible = true
         //        mControlsView = findViewById(R.id.fullscreen_content_controls);
@@ -144,5 +146,16 @@ class FullscreenActivity : AppCompatActivity() {
          * and a change of the status and navigation bar.
          */
         private val UI_ANIMATION_DELAY = 300
+
+
+    }
+    override fun onPause(){
+        super.onPause()
+        Log.i("Lifecycle", "onPause()")
+
+    }
+    override fun onDestroy(){
+        super.onDestroy()
+        Log.i("Lifecycle", "onDestroy")
     }
 }
