@@ -19,12 +19,16 @@ import kotlinx.android.synthetic.main.activity_main.*
 import java.util.ArrayList
 
 class MainActivity : AppCompatActivity() {
+
 // had to change something
+
+
     internal var imageList: ArrayList<ImageData> = ArrayList()
     private var layoutManager: LinearLayoutManager? = null
     private var listAdapter: ImageListAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        Log.i(CLASS_NAME, javaClass.simpleName + "- onCreate")
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val context = this
@@ -85,5 +89,32 @@ class MainActivity : AppCompatActivity() {
 
         internal const val REQUEST_IMAGE_GET = 1
         internal const val EDIT_IMAGE_REQUEST = 2
+        const val CLASS_NAME = "CLASS NAME"
     }
+
+    override fun onStart() {
+        super.onStart()
+        Log.i(CLASS_NAME, javaClass.simpleName + "- onStart")
+
+    }
+
+        override fun onResume() {
+            super.onResume()
+            Log.i(CLASS_NAME,javaClass.simpleName + "- onResume")
+        }
+
+        override fun onPause() {
+            super.onPause()
+            Log.i(CLASS_NAME,javaClass.simpleName +"- onPause")
+        }
+
+        override fun onStop() {
+            super.onStop()
+            Log.i(CLASS_NAME, javaClass.simpleName + "- onStop")
+        }
+
+        override fun onDestroy() {
+            super.onDestroy()
+            Log.i(CLASS_NAME,javaClass.simpleName + "- onDestroy")
+        }
 }
