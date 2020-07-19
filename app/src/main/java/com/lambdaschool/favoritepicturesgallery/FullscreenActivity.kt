@@ -8,6 +8,7 @@ import android.net.Uri
 import android.os.Bundle
 import android.os.Handler
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.widget.ImageView
@@ -17,6 +18,7 @@ import android.widget.ImageView
  * status bar and navigation/system bar) with user interaction.
  */
 class FullscreenActivity : AppCompatActivity() {
+
     private val mHideHandler = Handler()
     private var mContentView: View? = null
     private val mHidePart2Runnable = Runnable {
@@ -54,6 +56,7 @@ class FullscreenActivity : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        Log.i(CLASS_NAME, javaClass.simpleName + "- onCreate")
         super.onCreate(savedInstanceState)
 
         val stringArray = arrayOfNulls<String>(5)
@@ -144,5 +147,36 @@ class FullscreenActivity : AppCompatActivity() {
          * and a change of the status and navigation bar.
          */
         private val UI_ANIMATION_DELAY = 300
+
+        const val CLASS_NAME = "CLASS NAME"
     }
+
+    override fun onStart() {
+        super.onStart()
+        Log.i(CLASS_NAME, javaClass.simpleName + "- onStart")
+
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.i(CLASS_NAME,javaClass.simpleName + "- onResume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.i(CLASS_NAME,javaClass.simpleName +"- onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.i(CLASS_NAME, javaClass.simpleName + "- onStop")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.i(CLASS_NAME,javaClass.simpleName + "- onDestroy")
+    }
+
+
+
 }
